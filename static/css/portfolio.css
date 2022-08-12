@@ -1,22 +1,17 @@
 @media(min-width: 1400px) {
-	.cards {
-		width: 600px !important;
-	}
+    .cards {
+        width: 600px !important;
+    }
 }
 
 @media(min-width: 992px) {
-	.big {
-		
-	}
+    .cards:nth-child(3) {
+        transform: translateY(-100px) !important;
+    }
 }
 
 @media(max-width: 900px) {
-	.big {
-		justify-content: center;
-	}
+    .big {
+        justify-content: center;
+    }
 }
-
-.cards:nth-child(3) {
-	transform: translateY(-100px) !important;
-}
-
