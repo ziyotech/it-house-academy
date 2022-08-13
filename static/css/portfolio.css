@@ -13,18 +13,20 @@
 
 .cards img:hover {
     transform: translateY(-10px);
-} 
+}
 
 
 .read a {
     position: absolute;
     left: 140px;
 }
+
 .read i {
     margin-left: 10px;
     transform: rotate(-45deg);
     transition: 0.5s all ease;
 }
+
 .read:hover i {
     transform: translateY(-3px) translateX(3px) rotate(-45deg);
     transition: 0.5s all ease;
@@ -32,9 +34,33 @@
 
 
 
-@media (min-width:200px) and (max-width:1200px) {
-       .read a {
-            position: absolute;
-            left: 20px;
-       }
+@media (min-width:200px) and (max-width:500px) {
+    .read a {
+        position: absolute;
+        left: 20px;
+    }
+}
+@media (min-width:500px) and (max-width:700px) {
+    .read a {
+        position: absolute;
+        left: 60px;
+    }
+}
+@media (min-width:700px) and (max-width:1000px) {
+    .read a {
+        position: absolute;
+        left: 120px;
+    }
+}
+@media (min-width:1000px) and (max-width:1365px) {
+    .read a {
+        position: absolute;
+        left: 60px;
+    }
+}
+@media (min-width:1370px) and (max-width:2000px) {
+    .read a {
+        position: absolute;
+        left: 320px;
+    }
 }
