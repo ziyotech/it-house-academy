@@ -1,12 +1,7 @@
 @media(min-width: 1400px) {
     .cards {
         width: 600px !important;
-    }
-}
-
-@media(min-width: 992px) {
-    .cards:nth-child(3) {
-        transform: translateY(-100px) !important;
+        /*max-height: 270px !important;*/
     }
 }
 
@@ -14,4 +9,32 @@
     .big {
         justify-content: center;
     }
+}
+
+.cards img:hover {
+    transform: translateY(-10px);
+} 
+
+
+.read a {
+    position: absolute;
+    left: 140px;
+}
+.read i {
+    margin-left: 10px;
+    transform: rotate(-45deg);
+    transition: 0.5s all ease;
+}
+.read:hover i {
+    transform: translateY(-3px) translateX(3px) rotate(-45deg);
+    transition: 0.5s all ease;
+}
+
+
+
+@media (min-width:200px) and (max-width:1200px) {
+       .read a {
+            position: absolute;
+            left: 20px;
+       }
 }
