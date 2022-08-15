@@ -16,3 +16,27 @@ class Portfolio(models.Model):
 
 	def __str__(self):
 		return self.portfolio_heading
+
+# courses category
+class Category_courses(models.Model):
+
+	name = models.CharField(max_length=100)
+
+	def __str__(self):
+		return self.name
+
+
+# create contact us model
+class Contact(models.Model):
+    class Meta:
+        verbose_name = "Contact"
+        verbose_name_plural = "Apply"
+
+    full_name = models.CharField(max_length=100)
+    own_phone = models.IntegerField(default=998)
+    extra_phone = models.IntegerField(default=998)
+    message = models.CharField(max_length=120)
+    category = models.ForeignKey(Category_courses, null=True, default=None, on_delete=models.CASCADE, related_name="category_contact")
+
+    def __str__(self):
+        return self.full_name

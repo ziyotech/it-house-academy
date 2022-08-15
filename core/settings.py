@@ -15,7 +15,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["company-team.azurewebsites.net", '127.0.0.1', 'www.itha.uz']
 
-CSRF_TRUSTED_ORIGINS = ['https://company-team.azurewebsites.net','https://127.0.0.1', 'www.itha.uz']
+CSRF_TRUSTED_ORIGINS = ['https://company-team.azurewebsites.net','https://127.0.0.1', 'https://www.itha.uz']
 
 
 # Application definition
@@ -28,7 +28,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    'apps.company'
+    'apps.company',
+    'widget_tweaks'
 ]
 
 MIDDLEWARE = [
