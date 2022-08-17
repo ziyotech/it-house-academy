@@ -1,0 +1,7 @@
+@media(max-width: 700px) {
+	.img-header img {
+		position: relative;
+		width: 300px !important;
+		top: -20px !important;
+	}
+}

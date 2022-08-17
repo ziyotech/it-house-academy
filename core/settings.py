@@ -1,4 +1,14 @@
 from pathlib import Path
+import environ
+
+env = environ.Env(
+    DEBUG=(bool, True)
+)
+
+environ.Env.read_env()
+
+DEBUG = env('DEBUG')
+SECRET_KEY = env('SECRET_KEY')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -11,11 +21,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-))mzz(e+3pq6kqscaedojyaepgu-ha7^3hyf_2f8i_^l9x2y*z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS = ["company-team.azurewebsites.net", '127.0.0.1', 'www.itha.uz']
+ALLOWED_HOSTS = ["company-team.azurewebsites.net", '127.0.0.1', 'https://ithouse-academy.herokuapp.com', 'www.itha.uz']
 
-CSRF_TRUSTED_ORIGINS = ['https://company-team.azurewebsites.net','https://127.0.0.1', 'https://www.itha.uz']
+CSRF_TRUSTED_ORIGINS = ['https://company-team.azurewebsites.net','https://127.0.0.1']
 
 
 # Application definition
@@ -27,9 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'widget_tweaks',
     
     'apps.company',
-    'widget_tweaks'
 ]
 
 MIDDLEWARE = [
@@ -116,7 +126,7 @@ STATICFILES_DIRS = (
 )
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # media file lar bilan ishlash uchun kerak boladi
 MEDIA_ROOT = BASE_DIR / 'media'
