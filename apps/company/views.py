@@ -13,3 +13,11 @@ def home(request):
         form = ApplyModelForm()
     return render(request, 'pages/home.html', {"portfolios": portfolios, "form": form})
 
+
+def dashboard(request):
+    contact = models.Contact.objects.all()
+    context = {
+        "contact": contact
+    }
+    return render(request, 'pages/dashboard.html', context)
+
