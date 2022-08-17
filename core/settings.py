@@ -134,8 +134,6 @@ MEDIA_URL = '/media/'
 
 AUTH_USER_MODEL = 'company.CustomUser'
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SECURE_SSL_REDIRECT = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
