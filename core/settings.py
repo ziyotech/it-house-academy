@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'widget_tweaks',
     
     'apps.company',
+
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -83,13 +85,23 @@ WSGI_APPLICATION = 'core.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',
+#         'USER': 'Husan',
+#         'PASSWORD': 'onajonim',
+#         'HOST': 'database-2.ctjgawlgayja.us-east-1.rds.amazonaws.com',
+#         'POST': '5432'
+#     }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'Husan',
-        'PASSWORD': 'onajonim',
-        'HOST': 'database-2.ctjgawlgayja.us-east-1.rds.amazonaws.com',
+        'NAME': 'd4t82sog4b6h9t',
+        'USER': 'zrxftkmoehmgji',
+        'PASSWORD': '8efd735c0813c9eaa1b1fe6110d408e771376d4bcc3510b3c9fda65cb5b1b5aa',
+        'HOST': 'ec2-54-85-56-210.compute-1.amazonaws.com',
         'POST': '5432'
     }
 }
@@ -151,8 +163,10 @@ AUTH_USER_MODEL = 'company.CustomUser'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # AUTH_USER_MODEL = 'portfolio.User'
 
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# AWS_ACCESS_KEY_ID = ''
-# AWS_SECRET_ACCESS_KEY = ''
-# AWS_STORAGE_BUCKET_NAME = ''
-# AWS_QUERYSTRING_AUTH = ''
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_ACCESS_KEY_ID = 'AKIAUNVX4B4CMJ26FCVM'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'itha-house'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
