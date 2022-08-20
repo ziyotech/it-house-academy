@@ -10,7 +10,7 @@ class Portfolio(models.Model):
 		verbose_name = "Porfolio"
 		verbose_name_plural = "My Porfolio"
 
-	portfolio_image = models.ImageField()
+	portfolio_image = models.ImageField(upload_to="portfolio")
 	portfolio_heading = models.CharField(max_length=100)
 	portfolio_subheading = models.CharField(max_length=100)
 
