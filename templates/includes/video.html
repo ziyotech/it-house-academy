@@ -1,57 +1,58 @@
 {% load static %}
 <style type="text/css">
-#text2 {
-    /*animation: blink-caret 0.75s step-end infinite;*/
-    display: inline-block !important;
-    font-weight: bold;
-    width: 100px;
-}
-
-@keyframes blink-caret {
-    0% {
-        border-color: transparent
+    #text2 {
+        /*animation: blink-caret 0.75s step-end infinite;*/
+        display: inline-block !important;
+        font-weight: bold;
+        width: 100px;
     }
 
-    50% {
-        border-right: 2px solid #fff;
+    @keyframes blink-caret {
+        0% {
+            border-color: transparent
+        }
+
+        50% {
+            border-right: 2px solid #fff;
+        }
     }
-}
 
-.caret_writer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@media screen and (max-width: 700px) {
     .caret_writer {
-        flex-direction: column !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    .caret_writer p {
-        position: absolute;
-        top: 130px;
-        height: 40px;
-        font-size: 25px !important;
-    }
-}
+    @media screen and (max-width: 700px) {
+        .caret_writer {
+            flex-direction: column !important;
+        }
 
-@media screen and (min-width: 700px) and (max-width: 1000px) {
-    .caret_writer {
-        flex-direction: column !important;
+        .caret_writer p {
+            position: absolute;
+            top: 130px;
+            height: 40px;
+            font-size: 25px !important;
+        }
     }
 
-    .caret_writer p {
-        position: absolute;
-        top: 130px;
-        height: 40px;
-        font-size: 35px !important;
+    @media screen and (min-width: 700px) and (max-width: 1000px) {
+        .caret_writer {
+            flex-direction: column !important;
+        }
+
+        .caret_writer p {
+            position: absolute;
+            top: 130px;
+            height: 40px;
+            font-size: 35px !important;
+        }
     }
-}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;700;900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;700;900&display=swap"
+    rel="stylesheet" />
 <link rel="stylesheet" href="{% static 'css/header.css' %}" rel="stylesheet" />
 <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
 <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet" />
@@ -62,7 +63,8 @@
     <div class="heroText">
         <!-- <img style="width: 130px;" src="{% static 'images/logo.png' %}"> -->
         <div class="caret_writer">
-            <h1 class="text-white mt-5 mb-lg-4 img-header" style="font-size: 40px;" data-aos="zoom-in" data-aos-delay="800">
+            <h1 class="text-white mt-5 mb-lg-4 img-header" style="font-size: 40px;" data-aos="zoom-in"
+                data-aos-delay="800">
                 <img style="
       width: 400px;
       position: relative;
@@ -79,7 +81,7 @@
     </div>
     <div class="videoWrapper">
         <video autoplay="" loop="" muted="" class="custom-video">
-            <source src="{% static 'videos/video.mp4' %}" type="video/mp4" />
+            <source src="" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
     </div>
@@ -95,53 +97,53 @@
 <script src="{% static 'js/scrollspy.min.js' %}"></script>
 <script src="{% static 'js/custom.js' %}"></script>
 <script>
-var words = ["Academy", "Education"]
-var colors = ["#fff", "#fff", "#fff"]
+    var words = ["Academy", "Education"]
+    var colors = ["#fff", "#fff", "#fff"]
 
 
-var counter = 0;
-var currentIndex = getRandomInt(0, words.length - 1);
+    var counter = 0;
+    var currentIndex = getRandomInt(0, words.length - 1);
 
-var text = document.getElementById("text2");
+    var text = document.getElementById("text2");
 
-var stepInterval = setInterval(() => { step(); }, 200);
-var delInterval = null;
-var delTimeout = null;
+    var stepInterval = setInterval(() => { step(); }, 200);
+    var delInterval = null;
+    var delTimeout = null;
 
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 
-function delIntervalCallback() {
-    delInterval = setInterval(() => { del(); }, 100);
-    clearTimeout(delTimeout);
-}
+    function delIntervalCallback() {
+        delInterval = setInterval(() => { del(); }, 100);
+        clearTimeout(delTimeout);
+    }
 
-function del() {
-    if (counter == 0) {
-        let newIndex = getRandomInt(0, words.length - 1);
-        while (newIndex == currentIndex) {
-            newIndex = getRandomInt(0, words.length - 1);
+    function del() {
+        if (counter == 0) {
+            let newIndex = getRandomInt(0, words.length - 1);
+            while (newIndex == currentIndex) {
+                newIndex = getRandomInt(0, words.length - 1);
+            }
+            currentIndex = newIndex;
+            clearInterval(delInterval);
+            stepInterval = setInterval(() => { step(); }, 200);
+        } else {
+            text.textContent = text.textContent.slice(0, -1)
+            counter--;
         }
-        currentIndex = newIndex;
-        clearInterval(delInterval);
-        stepInterval = setInterval(() => { step(); }, 200);
-    } else {
-        text.textContent = text.textContent.slice(0, -1)
-        counter--;
     }
-}
 
-function step() {
-    if (counter >= words[currentIndex].length) {
-        clearInterval(stepInterval);
-        delTimeout = setTimeout(() => { delIntervalCallback(); }, 2000);
-    } else {
-        text.textContent += words[currentIndex][counter];
-        text.style.color = colors[currentIndex];
-        counter++;
+    function step() {
+        if (counter >= words[currentIndex].length) {
+            clearInterval(stepInterval);
+            delTimeout = setTimeout(() => { delIntervalCallback(); }, 2000);
+        } else {
+            text.textContent += words[currentIndex][counter];
+            text.style.color = colors[currentIndex];
+            counter++;
+        }
     }
-}
 </script>

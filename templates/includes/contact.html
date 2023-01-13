@@ -2,6 +2,15 @@
   input {
     color: #555 !important;
   }
+  .form_c:focus {
+    outline: #FFC107 solid 3px;
+    transition: 0.5s all ease;
+    border: none;
+    box-shadow: none;
+  }
+  .form_c{
+    transition: .1s outline ease !important;
+  }
 </style>
 <section class="contact section-padding" id="contact">
   <div class="container">
@@ -26,7 +35,7 @@
                 >To'liq ism familiya <sup class="text-danger">*</sup></label
               >
 
-              {% render_field form.full_name type="text" class="form-control" placeholder="Toliq ism familiya" %}
+              {% render_field form.full_name type="text" class="form-control form_c" placeholder="Toliq ism familiya" %}
             </div>
 
             <div class="col-lg-6 col-6">
@@ -34,27 +43,27 @@
                 >Shahsiy raqam <sup class="text-danger">*</sup></label
               >
 
-               {% render_field form.own_phone type="number" class="form-control" %}
+               {% render_field form.own_phone type="number" class="form-control form_c" %}
             </div>
             <div class="col-lg-6 col-6 mt-5">
               <label for="number" class="form-label"
                 >Qo'shimcha raqam <sup class="text-danger">*</sup></label
               >
 
-               {% render_field form.extra_phone type="number" class="form-control" %}
+               {% render_field form.extra_phone type="number" class="form-control form_c" %}
             </div>
             <div class="col-lg-6 col-6 mt-5">
               <label for="number" class="form-label"
                 >Yo'nalishni tanlang <sup class="text-danger">*</sup></label
               >
 
-               {% render_field form.category type="text" class="form-control" %}
+               {% render_field form.category type="text" class="form-control form_c" %}
             </div>
 
             <div class="col-12 my-4 mt-5">
               <label for="message" class="form-label">Aniq qanday maqsad bor(Iltimos qisqa va lo'nda bo'lsin)</label>
 
-              {% render_field form.message type="text" class="form-control" placeholder="Men frontend dasturchi bolmoqchiman" %}
+              {% render_field form.message type="text" class="form-control form_c" placeholder="Men frontend dasturchi bolmoqchiman" %}
             </div>
 
 <!--             <div class="col-12">
