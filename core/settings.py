@@ -79,12 +79,12 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+} 
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
@@ -95,16 +95,16 @@ WSGI_APPLICATION = 'core.wsgi.application'
 #         'POST': '5432'
 #     }
 # }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd4t82sog4b6h9t',
-        'USER': 'zrxftkmoehmgji',
-        'PASSWORD': '8efd735c0813c9eaa1b1fe6110d408e771376d4bcc3510b3c9fda65cb5b1b5aa',
-        'HOST': 'ec2-54-85-56-210.compute-1.amazonaws.com',
-        'POST': '5432'
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'd4t82sog4b6h9t',
+#         'USER': 'zrxftkmoehmgji',
+#         'PASSWORD': '8efd735c0813c9eaa1b1fe6110d408e771376d4bcc3510b3c9fda65cb5b1b5aa',
+#         'HOST': 'ec2-54-85-56-210.compute-1.amazonaws.com',
+#         'POST': '5432'
+#     }
+# }
 
 
 # Password validation
